@@ -1,12 +1,44 @@
-export const sample = {
+export type ItemStatus = "backlog" | "active" | "blocked" | "ready" | "done";
+
+export type WorkItem = {
+  id: string;
+  title: string;
+  category: string;
+  owner: string;
+  status: ItemStatus;
+  priority: number;
+  effort: number;
+  friction: number;
+  value: number;
+  due: string;
+  notes: string;
+};
+
+export type QualityCheck = {
+  id: string;
+  label: string;
+  passed: boolean;
+  weight: number;
+};
+
+export const sample: {
+  repoName: string;
+  title: string;
+  subtitle: string;
+  serviceLine: string;
+  description: string;
+  repositoryUrl: string;
+  liveDemoUrl: string;
+  theme: { accent: string; accent2: string; ink: string; soft: string; warm: string };
+  items: WorkItem[];
+  checks: QualityCheck[];
+  deliverables: string[];
+} = {
   "repoName": "foxhen-invoice-readiness-board",
   "title": "Invoice Readiness Board",
-  "subtitle": "Finance ops closeout sample",
+  "subtitle": "closeout tracker",
   "serviceLine": "Invoice and closeout operations",
-  "heroTitle": "Know which work is ready to invoice before month-end.",
-  "heroCopy": "A fictional finance ops board that checks deliverables, approvals, payment path, blockers, and receipt reconciliation notes.",
-  "primaryAction": "Check readiness",
-  "secondaryAction": "Review blockers",
+  "description": "Check deliverables, approvals, payment path, blockers, and receipt-readiness for fictional projects.",
   "repositoryUrl": "https://github.com/foxandhenllc/foxhen-invoice-readiness-board",
   "liveDemoUrl": "https://foxhen-invoice-readiness-board.vercel.app",
   "theme": {
@@ -14,115 +46,124 @@ export const sample = {
     "accent2": "#e2b55f",
     "ink": "#101708",
     "soft": "#f2f8e9",
-    "warm": "#fff3dc",
-    "surface": "#fffaf4",
-    "muted": "#5c667a",
-    "border": "rgba(7, 18, 31, 0.12)"
+    "warm": "#fff3dc"
   },
-  "metrics": [
+  "items": [
     {
-      "label": "Ready invoices",
-      "value": "11",
-      "note": "sample accounts"
-    },
-    {
-      "label": "Approval gaps",
-      "value": "4",
-      "note": "needs decision"
-    },
-    {
-      "label": "Cash timing",
-      "value": "6 days",
-      "note": "median path"
-    }
-  ],
-  "stages": [
-    {
-      "label": "Deliverables",
-      "detail": "Match completed work to acceptance proof and project terms.",
-      "status": "ready",
-      "owner": "Ops",
-      "index": 1
-    },
-    {
-      "label": "Approval",
-      "detail": "Surface missing signatures, unanswered questions, and scope deltas.",
-      "status": "active",
-      "owner": "Owner",
-      "index": 2
-    },
-    {
-      "label": "Invoice",
-      "detail": "Preview invoice readiness, payment method, and expected timing.",
-      "status": "waiting",
-      "owner": "Finance",
-      "index": 3
-    },
-    {
-      "label": "Receipt",
-      "detail": "Reconcile paid status and closeout notes.",
-      "status": "queued",
-      "owner": "Studio",
-      "index": 4
-    }
-  ],
-  "workItems": [
-    {
+      "id": "inv-1",
       "title": "Design sprint",
-      "detail": "Deliverables accepted, ready to bill",
-      "status": "ready"
+      "category": "Intake",
+      "owner": "Chris",
+      "status": "active",
+      "priority": 5,
+      "effort": 2,
+      "friction": 1,
+      "value": 5,
+      "due": "Today",
+      "notes": "Sample closeout tracker work item for invoice and closeout operations."
     },
     {
+      "id": "inv-2",
       "title": "Dashboard cleanup",
-      "detail": "Pending final approval note",
-      "status": "active"
+      "category": "Build",
+      "owner": "Fox & Hen",
+      "status": "backlog",
+      "priority": 4,
+      "effort": 4,
+      "friction": 2,
+      "value": 4,
+      "due": "24h",
+      "notes": "Sample closeout tracker work item for invoice and closeout operations."
     },
     {
+      "id": "inv-3",
       "title": "AI workflow",
-      "detail": "Waiting on payment-path choice",
-      "status": "waiting"
+      "category": "Review",
+      "owner": "Buyer",
+      "status": "blocked",
+      "priority": 3,
+      "effort": 3,
+      "friction": 4,
+      "value": 4,
+      "due": "48h",
+      "notes": "Sample closeout tracker work item for invoice and closeout operations."
     },
     {
+      "id": "inv-4",
+      "title": "Approval note",
+      "category": "Export",
+      "owner": "Automation",
+      "status": "ready",
+      "priority": 4,
+      "effort": 2,
+      "friction": 2,
+      "value": 3,
+      "due": "This week",
+      "notes": "Sample closeout tracker work item for invoice and closeout operations."
+    },
+    {
+      "id": "inv-5",
+      "title": "Payment path",
+      "category": "Intake",
+      "owner": "QA",
+      "status": "backlog",
+      "priority": 2,
+      "effort": 1,
+      "friction": 1,
+      "value": 3,
+      "due": "Waiting",
+      "notes": "Sample closeout tracker work item for invoice and closeout operations."
+    },
+    {
+      "id": "inv-6",
       "title": "Maintenance memo",
-      "detail": "Queued for next cycle",
-      "status": "queued"
+      "category": "Build",
+      "owner": "Chris",
+      "status": "done",
+      "priority": 5,
+      "effort": 5,
+      "friction": 3,
+      "value": 5,
+      "due": "Next pass",
+      "notes": "Sample closeout tracker work item for invoice and closeout operations."
+    }
+  ],
+  "checks": [
+    {
+      "id": "payer",
+      "label": "Payer or owner is clear",
+      "passed": true,
+      "weight": 18
+    },
+    {
+      "id": "deliverable",
+      "label": "Deliverable has acceptance criteria",
+      "passed": true,
+      "weight": 18
+    },
+    {
+      "id": "friction",
+      "label": "Account/access friction is documented",
+      "passed": false,
+      "weight": 14
+    },
+    {
+      "id": "handoff",
+      "label": "Handoff package is generated",
+      "passed": false,
+      "weight": 16
+    },
+    {
+      "id": "reuse",
+      "label": "Repeatable pipeline note exists",
+      "passed": true,
+      "weight": 12
     }
   ],
   "deliverables": [
-    {
-      "title": "Readiness board",
-      "detail": "A clear state model for billable work."
-    },
-    {
-      "title": "Blocker report",
-      "detail": "Exactly what prevents payment from moving."
-    },
-    {
-      "title": "Closeout notes",
-      "detail": "Receipt and follow-up tracking for repeat work."
-    }
-  ],
-  "timeline": [
-    {
-      "time": "0-2 hrs",
-      "detail": "Inventory billable work and proof"
-    },
-    {
-      "time": "2-8 hrs",
-      "detail": "Map blockers and readiness logic"
-    },
-    {
-      "time": "8-12 hrs",
-      "detail": "Package closeout and follow-up report"
-    }
-  ],
-  "proof": [
-    "Supports cashflow-focused ops engagements.",
-    "Ties directly to the fastest-first-payout operating goal.",
-    "Uses only fictional finance records."
+    "Ranked board",
+    "Editable item inspector",
+    "Readiness checklist",
+    "Exportable handoff report"
   ]
-} as const;
-
-export type StageStatus = "ready" | "active" | "waiting" | "queued";
-export type DemoStage = (typeof sample.stages)[number];
-export type WorkItem = (typeof sample.workItems)[number];
+};
