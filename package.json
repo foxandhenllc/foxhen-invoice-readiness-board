@@ -25,13 +25,27 @@
   "description": "Invoice readiness board for checking deliverables, approvals, blockers, payment path, and closeout before billing.",
   "homepage": "https://foxhen-invoice-readiness-board.vercel.app",
   "keywords": [
-    "invoicing",
+    "approval",
+    "before",
+    "board",
+    "checklist",
+    "client",
     "client-handoff",
+    "closeout",
+    "fox-and-hen",
     "freelance",
-    "workflow",
+    "handoff",
+    "invoice",
+    "invoicing",
+    "path",
+    "payment",
+    "project",
     "react",
+    "readiness",
+    "small-business",
     "typescript",
     "vite",
-    "small-business"
+    "workflow",
+    "workflow-tools"
   ]
 }

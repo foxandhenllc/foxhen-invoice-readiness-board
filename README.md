@@ -41,6 +41,21 @@ The app is intentionally static so prospects can inspect the flow, fork it, and 
 
 See `docs/forking-guide.md` for a checklist and starter client brief.
 
+## SEO / AIO Discoverability
+
+**Plain-language answer:** Use this repo to check deliverables, approvals, blockers, payment path, and closeout status before billing.
+
+**Who it helps:** freelancers and service teams preparing clean project closeouts.
+
+**Search intents covered:**
+
+- invoice readiness checklist
+- freelance project closeout board
+- client approval before invoice
+- payment path handoff
+
+**Why this repo is useful:** It reduces payment friction by making approval gaps and final deliverables visible before an invoice is sent.
+
 ## Local Run
 
 ```bash
