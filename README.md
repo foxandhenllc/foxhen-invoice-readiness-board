@@ -1,6 +1,6 @@
 # Invoice Readiness Board
 
-Public Fox & Hen working sample for **Invoice and closeout operations**.
+Invoice readiness board for checking deliverables, approvals, blockers, payment path, and closeout before billing.
 
 ![Demo screenshot](docs/demo-screenshot.png)
 
@@ -8,6 +8,10 @@ Public Fox & Hen working sample for **Invoice and closeout operations**.
 
 - Demo: [https://foxhen-invoice-readiness-board.vercel.app](https://foxhen-invoice-readiness-board.vercel.app)
 - Repository: [https://github.com/foxandhenllc/foxhen-invoice-readiness-board](https://github.com/foxandhenllc/foxhen-invoice-readiness-board)
+
+## Purpose
+
+Invoice readiness board for checking deliverables, approvals, blockers, payment path, and closeout before billing.
 
 ## Fully Working Behaviors
 
@@ -19,7 +23,7 @@ Public Fox & Hen working sample for **Invoice and closeout operations**.
 
 ## Service Mapping
 
-This demo packages a lightweight invoice and closeout operations workflow around:
+This repo packages a focused, public-safe workflow around:
 
 - Ranked board
 - Editable item inspector
