@@ -40,7 +40,7 @@ export const sample: {
   "serviceLine": "Invoice and closeout operations",
   "description": "Check deliverables, approvals, payment path, blockers, and receipt-readiness for fictional projects.",
   "repositoryUrl": "https://github.com/foxandhenllc/foxhen-invoice-readiness-board",
-  "liveDemoUrl": "https://foxhen-invoice-readiness-board.vercel.app",
+  "liveDemoUrl": "https://freetoolsforpeople.com/invoice-readiness-board",
   "theme": {
     "accent": "#465a32",
     "accent2": "#e2b55f",

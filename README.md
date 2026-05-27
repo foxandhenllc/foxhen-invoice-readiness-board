@@ -6,7 +6,7 @@ Invoice readiness board for checking deliverables, approvals, blockers, payment 
 
 ## Live Demo
 
-- Demo: [https://foxhen-invoice-readiness-board.vercel.app](https://foxhen-invoice-readiness-board.vercel.app)
+- Demo: [https://freetoolsforpeople.com/invoice-readiness-board](https://freetoolsforpeople.com/invoice-readiness-board)
 - Repository: [https://github.com/foxandhenllc/foxhen-invoice-readiness-board](https://github.com/foxandhenllc/foxhen-invoice-readiness-board)
 
 ## Purpose
